@@ -55,10 +55,22 @@ ng e2e
 
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
-## Additional Resources
+## Additional Information
+
+La aplicación Gestor de Proyectos es una aplicacion en la cual el usuario puede visualizar proyectos y tareas de una forma
+facil y practica. Inicialmente el usuario observara una ventana de inicio donde se muestra un login, Para poder acceder a la
+aplicación. el usuario debe realizar el login, ingresando usuario y contraseña de forma obligatoria. Luego de acceder a la 
+aplicación, el usuario podra visualizar los proyectos en forma de tarjetas, un header con el titulo Gestor de Proyectos y un
+boton de cerrar sesion que se utiliza para el Logout, si el usuario presiona el boton de cerrar sesion, debera nuevamente iniciar
+para visualizar los proyectos.
+
+El usuario puede acceder a cualquier proyecto y visualizar las tareas respectivas de cada proyecto haciendo clic en el proyecto,
+estas tareas y proyectos son traidas desde una API.
+
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
 =======
 # gestor_proyectos
 Prueba Tecnica Desarrollador FrontEnd Angular
+Desarrollado por Cristian Johan Varon Varon
 >>>>>>> 66f585a5fb10242035c9bfa4bbac75c46d592433
