@@ -2,9 +2,15 @@
 <div *ngIf="error">{{ error }}</div>
 
 <div class="projects-container" *ngIf="!loading && !error">
-  <div class="project-card" *ngFor="let project of projects">
+  <div 
+    class="project-card" 
+    *ngFor="let project of projects" 
+    [routerLink]="['/tasks', project.id]"
+    style="cursor: pointer; border: 1px solid #ccc; padding: 1rem; margin: 0.5rem; border-radius: 8px;"
+  >
     <h3>{{ project.name }}</h3>
     <p><strong>ID:</strong> {{ project.id }}</p>
     <p><strong>Descripción:</strong> {{ project.username }}</p>
   </div>
 </div>
+

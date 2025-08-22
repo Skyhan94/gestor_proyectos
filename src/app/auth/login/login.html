@@ -3,10 +3,10 @@
 
   <form (ngSubmit)="onLogin()" #loginForm="ngForm">
     <input type="text" placeholder="Usuario" id="username" name="username" [(ngModel)]="username" required #usernameCtrl="ngModel">
-    <small *@if="usernameCtrl.invalid && usernameCtrl.touched">ingrese un usuario</small>
+    <small *ngIf="usernameCtrl.invalid && usernameCtrl.touched">ingrese un usuario</small>
 
     <input type="password" placeholder="Contraseña" id="password" name="password" [(ngModel)]="password" required #passwordCtrl="ngModel">
-    <small *@if="passwordCtrl.invalid && passwordCtrl.touched">ingrese una contraseña</small>
+    <small *ngIf="passwordCtrl.invalid && passwordCtrl.touched">ingrese una contraseña</small>
 
     <button type="submit" [disabled]="loginForm.invalid">Ingresar</button>
   </form>

@@ -1,0 +1,21 @@
+<h2>Tareas del Proyecto {{ projectId }}</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Título</th>
+      <th>Completada</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let task of tasks">
+      <td>{{ task.id }}</td>
+      <td>{{ task.title }}</td>
+      <td>
+        <span [style.color]="task.completed ? 'green' : 'red'">
+          {{ task.completed ? 'Sí' : 'No' }}
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>

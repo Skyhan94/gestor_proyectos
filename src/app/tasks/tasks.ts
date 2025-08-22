@@ -1,11 +1,16 @@
-import { Component } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
-@Component({
-  selector: 'app-tasks',
-  standalone: false,
-  templateUrl: './tasks.html',
-  styleUrl: './tasks.css'
+@Injectable({
+  providedIn: 'root'
 })
-export class Tasks {
+export class TasksService {
+  private apiUrl = 'https://jsonplaceholder.typicode.com/todos';
 
+  constructor(private http: HttpClient) {}
+
+  getTasksByProject(projectId: number): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}?userId=${projectId}`);
+  }
 }
