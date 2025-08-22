@@ -1,20 +1,27 @@
 import { Injectable } from '@angular/core';
-//Servicio para autenticar (Iniciar o cerrar sesion)
+
+// Servicio para autenticar (Iniciar o cerrar sesión)
 @Injectable({
   providedIn: 'root'
 })
 export class Auth {
+  private static USER_KEY = 'user';
 
   static login(user: any) {
-    localStorage.setItem('user', JSON.stringify(user));
+    localStorage.setItem(this.USER_KEY, JSON.stringify(user));
   }
+
   static getUser() {
-    return JSON.parse(localStorage.getItem('user') || '{}');
+    const user = localStorage.getItem(this.USER_KEY);
+    return user ? JSON.parse(user) : null;
   }
+
   static logout() {
-    localStorage.removeItem('user');
+    localStorage.removeItem(this.USER_KEY);
   }
+
   static isLoggedIn(): boolean {
-    return !!localStorage.getItem('user');
+    return this.getUser() !== null;
   }
 }
+

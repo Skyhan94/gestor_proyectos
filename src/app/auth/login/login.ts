@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Auth } from '../../core/auth';
 
 @Component({
@@ -11,23 +12,26 @@ export class Login {
   username: string = '';
   password: string = '';
 
-  onLogin(){
-    if(this.username && this.password){
-      Auth.login({ username: this.username, password: this.password});
+  constructor(private router: Router) {}
 
-      alert (`Bienvenido, ${this.username}`);
-      console.log("Usuario logueado: ", Auth.getUser());
+  onLogin() {
+    if (this.username && this.password) {
+      Auth.login({ username: this.username, password: this.password });
+      console.log('Usuario logueado: ', Auth.getUser());
+
+      this.router.navigate(['/projects/list']);
     } else {
-      alert ('Ingrese usuario y contraseña');
+      alert('Ingrese usuario y contraseña');
     }
   }
 
-  onLogout(){
+  onLogout() {
     Auth.logout();
-    alert('Sesion cerrada');
+    alert('Sesión cerrada');
   }
 
   isLoggedIn(): boolean {
     return Auth.isLoggedIn();
   }
 }
+

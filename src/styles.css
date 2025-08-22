@@ -1,9 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background: linear-gradient(135deg, #4A90E2, #6FB1FC);
-  height: 100vh;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block; 
+}
+
+app-root {
+  display: block;
+  width: 100%;
+  min-height: 100%;
+}
+
+app-projects-list {
+  display: block;
+  width: 100%;
 }
