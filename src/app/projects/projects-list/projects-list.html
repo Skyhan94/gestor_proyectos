@@ -1,0 +1,10 @@
+<div *ngIf="loading">Cargando proyectos...</div>
+<div *ngIf="error">{{ error }}</div>
+
+<div class="projects-container" *ngIf="!loading && !error">
+  <div class="project-card" *ngFor="let project of projects">
+    <h3>{{ project.name }}</h3>
+    <p><strong>ID:</strong> {{ project.id }}</p>
+    <p><strong>Descripción:</strong> {{ project.username }}</p>
+  </div>
+</div>
